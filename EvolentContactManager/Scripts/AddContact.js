@@ -3,10 +3,10 @@
     $(function () {
         $.getJSON('api/contact', function (contactsJsonPayload) {
             contactsJsonPayload.map(function (value, index) {
-                //if (value.Id == id) {
-                //    alert("ID is already present");
-                //    return document.getElementsByName("Id")[0].value=""
-                //}
+                if (value.Id == id) {
+                    alert("ID is already present");
+                    return document.getElementsByName("Id")[0].value=""
+                }
                         
             });
         });
@@ -55,7 +55,7 @@ function myFunction() {
 
         }
         else if (v.name === "status") {
-            if (v.value!="Active" || v.value!="Inactive"|| !v.value) {
+            if (v.value!="Active" &&  v.value!="Inactive") {
                 alert("status Should be either Active or Inactive");
                 v.value = "";
                 return flag = false;
