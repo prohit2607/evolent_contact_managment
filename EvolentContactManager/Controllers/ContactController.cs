@@ -35,11 +35,5 @@ namespace EvolentContactManager.Controllers
             return response;
         }
 
-        [HttpGet]
-        public void Delete(int id)
-        {
-            
-        }
-
     }
 }

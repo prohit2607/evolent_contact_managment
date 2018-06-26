@@ -28,7 +28,7 @@ namespace EvolentContactManager.Services
                             FirstName="Vijay",
                             LastName="Anna",
                             Email="vijay.anna@evolent.com",
-                            PhoneNumber="2014887",
+                            PhoneNumber="2014887234",
                             status="Active"
                         },
                         new Contact
@@ -37,7 +37,7 @@ namespace EvolentContactManager.Services
                             FirstName="Rahul",
                             LastName="Neela",
                             Email="rahul.neela@evolent.com",
-                            PhoneNumber="4027154",
+                            PhoneNumber="4027154667",
                             status="Active"
                         }
                     };
@@ -87,31 +87,6 @@ namespace EvolentContactManager.Services
                 }
             }
             return false;
-        }
-
-        public bool DeleteContact(int id)
-        {
-            var context = HttpContext.Current;
-            if (context != null)
-            {
-                try
-                {
-                    var currentData = ((Contact[])context.Cache[CacheKey]).ToList().Where(x => x.Id == id).Single<Contact>();
-
-                    context.Cache.Remove(currentData.FirstName);
-
-                    context.Cache[CacheKey] = ((Contact[])context.Cache[CacheKey]).ToList().ToArray();
-                    return true;
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception.ToString());
-                    return false;
-                }
-            }
-            return false;
-        }
-
-       
+        }       
     }
 }
